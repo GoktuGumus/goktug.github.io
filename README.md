@@ -3,7 +3,7 @@
 ### Technical Skills:   **C#, WPF, Docker, C++, JavaScript, React.js**
 
 ## Education
-Computer Engineering, Bachelor's Degree  |  Çankaya University (September 2016)
+Computer Engineering, Bachelor's Degree  |  *Çankaya University (September 2023)*
 
 ## Work Experience
 **Software Engineer @ Toucan Code Labs (March 2024 - Present)**
