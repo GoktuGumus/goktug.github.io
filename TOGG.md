@@ -1,0 +1,4 @@
+- ### TOGG Coat Painting Station Information Platform
+    - A web application developed for tracking the processes of painting, cleaning and drying the coats of Togg brand cars and displaying the problems on the screen.
+    - Dynamically fetching and displaying datas from database by using PostgreSQL and Javascript.
+    - Frontend development by using HTML CSS and JavaScript.
