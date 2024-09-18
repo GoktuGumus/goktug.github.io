@@ -3,3 +3,15 @@ description: Software Engineer | Firmware and Embedded Systems Development | Sys
 logo: assets/img/goktug.jpeg
 # show_downloads: true
 theme: jekyll-theme-minimal
+# Navigation
+nav:
+  - name: Home
+    link: /
+  - name: Projects
+    link: /projects
+  - name: Blog
+    link: /blog
+  - name: About
+    link: /about
+  - name: Contact
+    link: /contact
