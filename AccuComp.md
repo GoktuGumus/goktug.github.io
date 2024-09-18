@@ -1,0 +1,13 @@
+- ### AccuComp
+    - Using dsPIC33FJ256MC710A-I/PF, I developed an algorithm that applies lossless compression by dividing data from a 60-leg MAC processor into chunks.
+    - I developed it in C++ and then moved it to C to combine it with hardware and increase efficiency.
+    - I losslessly compressed 60 incoming data every 10 ms, saving 65% of space.
+    - This compression process takes place in the range of 1-2 ms on average. Then the decompression process is applied again in a lossless manner.
+    - The methods I used while developing the Custom Compression Algorithm and Decompression Algorithm are listed below: 
+        - Data Normalization
+        - Delta Coding
+        - Adaptive Huffman Coding
+        - Adaptive Huffman Decoding
+        - Delta Decoding
+        - Data Denormalization
+    - At the end of the process, I provided the user with log files containing information such as the original size of the compressed data, the post-compression size, the post-decompressed size, the consistency between the original data and the decompressed data, and the total space saved.
