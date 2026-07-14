@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Göktuğ Gümüş — Software Engineer</title>
+<meta name="description" content="AI engineer building real-time computer vision, deep learning on embedded hardware and self-hosted LLM & RAG systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚦</text></svg>">
+<style>
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 600; font-display: swap; src: url(assets/fonts/ChakraPetch-600-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 600; font-display: swap; src: url(assets/fonts/ChakraPetch-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 700; font-display: swap; src: url(assets/fonts/ChakraPetch-700-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 700; font-display: swap; src: url(assets/fonts/ChakraPetch-700-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/IBMPlexMono-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/IBMPlexMono-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(assets/fonts/IBMPlexMono-500-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(assets/fonts/IBMPlexMono-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/IBMPlexSans-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/IBMPlexSans-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url(assets/fonts/IBMPlexSans-600-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url(assets/fonts/IBMPlexSans-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  --asphalt: #0A101F;
+  --panel: #101828;
+  --panel-2: #0D1424;
+  --hairline: rgba(158, 178, 214, .14);
+  --ink: #EAF0FA;
+  --dim: #9DACC6;
+  --sodium: #FFB13D;
+  --signal: #3ECF7A;
+  --tail: #FF5A52;
+  --display: 'Chakra Petch', 'Arial Narrow', sans-serif;
+  --body: 'IBM Plex Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--asphalt);
+  color: var(--dim);
+  font-family: var(--body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--sodium); color: var(--asphalt); }
+
+a { color: var(--ink); text-decoration: none; }
+:focus-visible { outline: 2px solid var(--sodium); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 1080px; margin-inline: auto; padding-inline: clamp(20px, 4vw, 40px); }
+
+/* ---------- hero ---------- */
+.hero {
+  display: grid; grid-template-columns: 1.15fr .85fr;
+  gap: clamp(32px, 5vw, 64px); align-items: center;
+  padding-block: clamp(64px, 9vw, 112px) clamp(36px, 5vw, 64px);
+}
+.eyebrow {
+  font-family: var(--mono); font-weight: 500; font-size: 12.5px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--sodium);
+}
+.hero h1 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(46px, 7.5vw, 84px);
+  line-height: .98; letter-spacing: .01em; text-transform: uppercase;
+  color: var(--ink); margin-block: 18px 22px;
+  text-wrap: balance;
+}
+.lede { max-width: 34em; font-size: clamp(16.5px, 1.6vw, 18.5px); }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+.status {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 28px; padding: 9px 16px;
+  border: 1px solid var(--hairline); border-radius: 999px;
+  background: var(--panel-2);
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .05em;
+  color: var(--ink);
+}
+.status .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--signal); box-shadow: 0 0 10px var(--signal);
+  animation: pulse 2.6s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: .45; } }
+
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn {
+  font-family: var(--mono); font-size: 13px; letter-spacing: .08em;
+  padding: 11px 20px; border-radius: 6px;
+  border: 1px solid var(--hairline); color: var(--ink);
+  transition: border-color .2s, background .2s, color .2s;
+}
+.btn:hover { border-color: var(--sodium); color: var(--sodium); }
+.btn.primary { background: var(--sodium); border-color: var(--sodium); color: #1A1206; font-weight: 500; }
+.btn.primary:hover { background: #FFC266; color: #1A1206; }
+
+/* ---------- photo / viewfinder ---------- */
+.frame { position: relative; justify-self: center; width: min(100%, 310px); }
+.frame img {
+  display: block; width: 100%; height: auto; border-radius: 12px;
+  border: 1px solid var(--hairline);
+}
+.frame .corner {
+  position: absolute; width: 22px; height: 22px; border: 2px solid var(--sodium);
+}
+.corner.tl { top: -9px; left: -9px; border-right: 0; border-bottom: 0; }
+.corner.tr { top: -9px; right: -9px; border-left: 0; border-bottom: 0; }
+.corner.bl { bottom: -9px; left: -9px; border-right: 0; border-top: 0; }
+.corner.br { bottom: -9px; right: -9px; border-left: 0; border-top: 0; }
+/* ---------- road divider ---------- */
+.road {
+  position: relative; height: 78px; overflow: hidden;
+  background: #070C17;
+  border-block: 1px solid var(--hairline);
+}
+.road::before {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg,
+    rgba(158, 178, 214, .35) 0 34px, transparent 34px 78px);
+  height: 2px; top: 50%; margin-top: -1px;
+}
+.streak {
+  position: absolute; height: 3px; border-radius: 3px;
+  animation: drive-r 9s linear infinite;
+}
+.streak.head {
+  width: 120px;
+  background: linear-gradient(90deg, transparent, #FFE1AD);
+  box-shadow: 0 0 12px 1px rgba(255, 177, 61, .55);
+}
+.streak.tail {
+  width: 96px;
+  background: linear-gradient(90deg, var(--tail), transparent);
+  box-shadow: 0 0 12px 1px rgba(255, 90, 82, .45);
+  animation-name: drive-l;
+}
+.streak:nth-child(1) { top: 22%; animation-duration: 8s; }
+.streak:nth-child(2) { top: 34%; animation-duration: 11s; animation-delay: -6s; }
+.streak:nth-child(3) { top: 26%; animation-duration: 14s; animation-delay: -3s; }
+.streak:nth-child(4) { top: 66%; animation-duration: 10s; animation-delay: -2s; }
+.streak:nth-child(5) { top: 76%; animation-duration: 13s; animation-delay: -8s; }
+@keyframes drive-r { from { left: -140px; } to { left: 110%; } }
+@keyframes drive-l { from { right: -140px; } to { right: 110%; } }
+
+/* ---------- sections ---------- */
+section { padding-block: clamp(48px, 7vw, 80px); }
+section > .wrap > .eyebrow { margin-bottom: 34px; }
+
+/* ---------- experience ---------- */
+.timeline { display: grid; gap: 34px; border-left: 1px solid var(--hairline); }
+.job { position: relative; padding-left: clamp(24px, 3vw, 40px); }
+.job::before {
+  content: ""; position: absolute; left: -5.5px; top: 9px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--sodium);
+}
+.job.now::before { background: var(--signal); box-shadow: 0 0 12px var(--signal); }
+.job h3 {
+  font-family: var(--display); font-weight: 600; font-size: 21px;
+  color: var(--ink); letter-spacing: .01em;
+}
+.job .meta {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .06em;
+  color: var(--dim); margin-block: 4px 14px; display: block;
+}
+.job .meta b { color: var(--sodium); font-weight: 500; }
+.job ul { list-style: none; display: grid; gap: 8px; max-width: 46em; }
+.job li { padding-left: 20px; position: relative; }
+.job li::before { content: "–"; position: absolute; left: 0; color: var(--sodium); }
+
+/* ---------- projects ---------- */
+.cards { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+.card {
+  grid-column: span 1; display: flex; flex-direction: column; gap: 14px;
+  background: var(--panel); border: 1px solid var(--hairline); border-radius: 10px;
+  padding: clamp(22px, 3vw, 30px);
+  transition: border-color .25s, transform .25s;
+}
+.card:hover { border-color: rgba(255, 177, 61, .45); transform: translateY(-3px); }
+.card.featured { grid-column: 1 / -1; background: linear-gradient(120deg, var(--panel) 60%, #16203A); }
+.card .kicker {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--sodium);
+}
+.card h3 {
+  font-family: var(--display); font-weight: 600; font-size: 22px;
+  color: var(--ink); line-height: 1.2; text-wrap: balance;
+}
+.card.featured h3 { font-size: clamp(24px, 3vw, 30px); }
+.card p.sub { color: var(--dim); }
+.card ul { list-style: none; display: grid; gap: 8px; }
+.card.featured ul { grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+.card li { padding-left: 20px; position: relative; font-size: 15.5px; }
+.card li::before { content: "–"; position: absolute; left: 0; color: var(--sodium); }
+.award {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .04em;
+  color: var(--sodium); border: 1px solid rgba(255, 177, 61, .4);
+  border-radius: 999px; padding: 5px 13px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
+.tag {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em;
+  color: var(--dim); border: 1px solid var(--hairline);
+  border-radius: 4px; padding: 3px 9px;
+}
+.plinks { display: flex; gap: 18px; }
+.plinks a {
+  font-family: var(--mono); font-size: 13px; color: var(--ink);
+  border-bottom: 1px solid var(--sodium); padding-bottom: 1px;
+  transition: color .2s;
+}
+.plinks a:hover { color: var(--sodium); }
+
+/* ---------- toolbox ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip {
+  font-family: var(--display); font-weight: 600; font-size: 16px;
+  color: var(--ink); background: var(--panel);
+  border: 1px solid var(--hairline); border-radius: 8px;
+  padding: 12px 22px;
+}
+.also {
+  margin-top: 22px; font-family: var(--mono); font-size: 13px;
+  letter-spacing: .04em; color: var(--dim);
+}
+.also b { color: var(--sodium); font-weight: 500; }
+
+/* ---------- education ---------- */
+.edu {
+  display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline;
+  border: 1px solid var(--hairline); border-radius: 10px;
+  background: var(--panel-2); padding: 24px 28px; max-width: 640px;
+}
+.edu h3 { font-family: var(--display); font-weight: 600; font-size: 19px; color: var(--ink); }
+.edu span { font-family: var(--mono); font-size: 13px; }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--hairline); padding-block: clamp(48px, 7vw, 80px) 40px; }
+footer h2 {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(30px, 5vw, 52px); color: var(--ink); line-height: 1.05;
+  margin-block: 16px 12px; text-wrap: balance;
+}
+footer .lede { margin-bottom: 28px; }
+.small {
+  margin-top: 56px; display: flex; flex-wrap: wrap; gap: 12px 24px;
+  justify-content: space-between;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .05em; color: var(--dim);
+}
+
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .cards { grid-template-columns: 1fr; }
+  .card.featured ul { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .frame { justify-self: start; width: min(100%, 270px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .streak, .status .dot { animation: none; }
+  .streak { opacity: .5; }
+  .streak:nth-child(1) { left: 12%; } .streak:nth-child(2) { left: 55%; }
+  .streak:nth-child(3) { left: 80%; } .streak:nth-child(4) { right: 20%; }
+  .streak:nth-child(5) { right: 60%; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card, .card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">// software engineer — image processing &amp; machine learning</p>
+      <h1>Göktuğ Gümüş</h1>
+      <p class="lede">I build AI systems that run in the real world — <strong>real-time computer vision</strong>, deep learning on <strong>embedded hardware</strong>, and self-hosted <strong>LLM &amp; RAG</strong> pipelines in production.</p>
+      <p class="status"><span class="dot"></span>NOW — Software Engineer @ ISSD Bilişim Teknolojik A.Ş.</p>
+    </div>
+    <figure class="frame">
+      <img src="assets/img/goktug-hero.jpg" alt="Portrait of Göktuğ Gümüş" width="800" height="640">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+    </figure>
+  </section>
+
+  <div class="road" aria-hidden="true">
+    <span class="streak head"></span>
+    <span class="streak head"></span>
+    <span class="streak head"></span>
+    <span class="streak tail"></span>
+    <span class="streak tail"></span>
+  </div>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow">// experience</p>
+      <div class="timeline">
+        <article class="job now reveal">
+          <h3>Software Engineer</h3>
+          <span class="meta"><b>ISSD Bilişim Teknolojik A.Ş.</b> · January 2026 — present</span>
+          <ul>
+            <li>Developing real-time computer vision applications for intelligent transportation systems — object detection, tracking and classification.</li>
+            <li>Deploying and optimizing deep learning models on embedded hardware: model quantization and inference optimization.</li>
+            <li>Building machine learning and LLM-based solutions, including a RAG + function-calling assistant for natural-language querying of traffic data.</li>
+            <li>Building dataset preparation and annotation pipelines for model training (CVAT).</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <h3>Software Engineer</h3>
+          <span class="meta"><b>Toucan Code Labs</b> · March 2024 — January 2026</span>
+          <ul>
+            <li>Embedded system design and development using WPF and the .NET 8 Framework.</li>
+            <li>Maintained code bases and implemented new features and endpoints for existing .NET projects in C#.</li>
+            <li>Tracked bugs, features and milestones with Azure DevOps and Trello.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <p class="eyebrow">// projects</p>
+      <div class="cards">
+        <article class="card featured reveal">
+          <p class="kicker">featured · llm / rag</p>
+          <h3>AI-Powered Traffic Data Assistant</h3>
+          <p class="sub">An LLM assistant that turns natural-language questions into structured API calls against a traffic management platform — and answers from live data.</p>
+          <ul>
+            <li>Fully self-hosted inference stack: quantized Qwen3 8B (GGUF) weights served through llama-cpp-python with GPU-accelerated, low-latency generation — deployed on-premises in a containerized environment, with no dependency on external LLM APIs.</li>
+            <li>Orchestration layer in pure Python — prompt construction, conversation state, tool-call parsing and validation — no agent framework.</li>
+            <li>RAG pipeline on Qdrant: domain documents chunked, embedded and indexed for top-k semantic retrieval that grounds responses.</li>
+            <li>JSON-schema function calling: intent detection, parameter extraction and validation, API invocation and result summarization.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Qwen3 8B</span><span class="tag">llama-cpp-python</span>
+            <span class="tag">Qdrant</span><span class="tag">Docker</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <p class="kicker">desktop / embedded</p>
+          <h3>AccuFire</h3>
+          <p class="sub">Ground-station desktop app for remote control of field hardware.</p>
+          <ul>
+            <li>C# / .NET 8 backend; async threading synchronized with Mutex and Semaphore primitives.</li>
+            <li>Serial COM link to an STM32 (ARM) microprocessor with connection control and data-flow management.</li>
+            <li>Simulation-box switch control, real-time warning screens and live data graphs.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">C#</span><span class="tag">.NET 8</span>
+            <span class="tag">WPF</span><span class="tag">STM32</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <p class="kicker">embedded / dsp</p>
+          <h3>AccuComp</h3>
+          <p class="sub">Lossless compression on a microcontroller — 65% space saved in 1–2 ms per cycle.</p>
+          <ul>
+            <li>Compresses 60 channels of data arriving every 10 ms on a dsPIC33 — fully lossless, verified by consistency logs.</li>
+            <li>Pipeline of normalization, delta coding and adaptive Huffman coding.</li>
+            <li>Prototyped in C++, ported to C for hardware integration and speed.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">C / C++</span><span class="tag">dsPIC33</span>
+            <span class="tag">Huffman</span><span class="tag">Delta coding</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <p class="kicker">uav / computer vision</p>
+          <h3>TALIA</h3>
+          <p class="sub">Software for a fully autonomous VTOL unmanned aerial vehicle.</p>
+          <ul>
+            <li>Image processing, path and vehicle detection and tracking.</li>
+            <li>Real-time image recording and high-FPS streaming to the ground station.</li>
+            <li>Fully autonomous flight.</li>
+          </ul>
+          <p class="award">★ 1st place — 16th R&amp;D Project Market</p>
+          <div class="plinks">
+            <a href="https://github.com/CankayaUniversity/ceng-407-408-2022-2023-Autonomous-VTOL-Design">GitHub ↗</a>
+            <a href="https://www.youtube.com/watch?v=IkvebxVaYGU">YouTube ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="toolbox">
+    <div class="wrap">
+      <p class="eyebrow">// toolbox</p>
+      <div class="chips reveal">
+        <span class="chip">Python</span><span class="chip">C++</span><span class="chip">C#</span>
+        <span class="chip">Docker</span><span class="chip">LLM &amp; RAG</span>
+      </div>
+      <p class="also"><b>also working with</b> — Qdrant · llama.cpp · .NET · STM32 · CVAT</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <p class="eyebrow">// education</p>
+      <div class="edu reveal">
+        <h3>B.Sc. Computer Engineering</h3>
+        <span>Çankaya University · 2023</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="eyebrow">// contact</p>
+    <h2>Let's build something<br>intelligent.</h2>
+    <p class="lede">Open to conversations about computer vision, embedded AI and LLM systems.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="mailto:goktugg.gumuss@gmail.com">goktugg.gumuss@gmail.com</a>
+      <a class="btn" href="https://github.com/goktugumus">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/goktuggumuss">LinkedIn</a>
+    </div>
+    <div class="small">
+      <span>© 2026 Göktuğ Gümüş</span>
+      <span>plain HTML &amp; CSS, no frameworks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .12 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

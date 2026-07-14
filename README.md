@@ -25,7 +25,7 @@ Computer Engineering, Bachelor's Degree  |  *Çankaya University (September 2023
 
 ### AI-Powered Traffic Data Assistant (RAG + Function Calling)
 - Designed and built an end-to-end LLM assistant that translates natural-language questions into structured REST API calls against a traffic management platform and synthesizes analytical answers from the returned data.
-- Self-hosted a quantized Qwen3 8B (GGUF) model served through llama-cpp-python with full GPU offload on an NVIDIA RTX 5090 (32 GB VRAM), running in a containerized (Docker) multi-user environment.
+- Fully self-hosted inference stack: quantized Qwen3 8B (GGUF) weights served through llama-cpp-python with GPU-accelerated, low-latency generation — deployed on-premises in a containerized (Docker) multi-user environment, with no dependency on external LLM APIs.
 - Implemented the orchestration layer in pure Python — prompt construction, conversation state management, tool-call parsing and validation, and API response post-processing — without relying on an agent framework.
 - Built a Retrieval-Augmented Generation (RAG) pipeline on Qdrant: domain documents are chunked, embedded and indexed for top-k semantic retrieval that grounds model responses and reduces hallucination.
 - Implemented JSON-schema-based function calling: intent detection, parameter extraction and validation (route, time range, metric), API invocation and result summarization.
