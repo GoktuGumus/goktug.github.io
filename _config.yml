@@ -1,17 +1,5 @@
 title: Goktug GUMUS
-description: Software Engineer | Firmware and Embedded Systems Development | System Design and Simulations
+description: Software Engineer | Computer Vision & Embedded AI | LLM & RAG Systems
 logo: assets/img/goktug.jpeg
 # show_downloads: true
 theme: jekyll-theme-minimal
-# Navigation
-nav:
-  - name: Home
-    link: /
-  - name: Projects
-    link: /Projects
-  - name: Blog
-    link: /blog
-  - name: About
-    link: /about
-  - name: Contact
-    link: /contact
