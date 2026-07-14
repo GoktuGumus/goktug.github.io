@@ -65,6 +65,14 @@ a { color: var(--ink); text-decoration: none; }
   font-family: var(--mono); font-weight: 500; font-size: 12.5px;
   letter-spacing: .14em; text-transform: uppercase; color: var(--sodium);
 }
+.hero .eyebrow {
+  font-size: clamp(10px, 1.12vw, 12px);
+  letter-spacing: .04em;
+  text-wrap: balance;
+}
+@media (min-width: 761px) {
+  .hero .eyebrow { white-space: nowrap; }
+}
 .hero h1 {
   font-family: var(--display); font-weight: 700;
   font-size: clamp(46px, 7.5vw, 84px);
@@ -287,7 +295,7 @@ footer .lede { margin-bottom: 28px; }
 <main>
   <section class="hero wrap">
     <div>
-      <p class="eyebrow">// software engineer | computer vision &amp; embedded ai | llm &amp; rag systems</p>
+      <p class="eyebrow">software engineer | computer vision &amp; embedded ai | llm &amp; rag systems</p>
       <h1>Göktuğ Gümüş</h1>
       <p class="lede">I build AI systems that run in the real world — <strong>real-time computer vision</strong>, deep learning on <strong>embedded hardware</strong>, and self-hosted <strong>LLM &amp; RAG</strong> pipelines in production.</p>
       <p class="status"><span class="dot"></span>NOW — Software Engineer @ ISSD Bilişim Teknolojik A.Ş.</p>
